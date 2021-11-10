@@ -32,7 +32,10 @@ public class ResponseBodyController {
         return "ok";
     }
 
-    @ResponseBody
+    /**
+     * @ResponseBody가 없어도 JSON으로 변환되는 이유는
+     * ResponseEntity 때문!
+     */
     @GetMapping("/response-body-json-v1")
     public ResponseEntity<HelloData> responseBodyJsonV1() {
         HelloData helloData = new HelloData();
